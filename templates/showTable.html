@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Table Data</title>
+</head>
+<body>
+    <h1>Show Table Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Table Name</th>
+                <th>Column Name</th>
+                <th>Data Type</th>
+                <th>Nullable</th>
+                <th>Primary Key</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in data %}
+            <tr>
+                <td>{{ table[0] }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            {% for column in table[1] %}
+            <tr>
+                <td></td>
+                <td>{{ column[1] }}</td>
+                <td>{{ column[2] }}</td>
+                <td>{{ "Yes" if column[3] else "No" }}</td>
+                <td>{{ "Yes" if column[5] else "No" }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
